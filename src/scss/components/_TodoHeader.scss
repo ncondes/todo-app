@@ -1,0 +1,21 @@
+.todo__header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+
+  h1 {
+    color: $lt-very-light-gray;
+    font-size: 2rem;
+    letter-spacing: 1.2rem;
+    line-height: 2rem;
+  }
+
+  img {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+}
+

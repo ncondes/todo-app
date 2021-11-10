@@ -1,0 +1,49 @@
+# Init git
+-> git init and pair with the repo
+
+# Init npm
+-> npm init -y
+
+# Install React 
+-> npm i -S react react-dom
+
+# Create the project folders & files
+-> src -> {components, index.js}
+-> components -> { App.jsx }
+-> public -> { index.html }
+
+# Set up the files: App.jsx, index.html and index.js
+
+# Install Babel
+-> npm i -D @babel/core @babel/preset-env @babel/preset-react babel-loader
+-> create .babelrc and config
+
+# Install Webpack
+-> npm i -D webpack webpack-cli webpack-dev-server
+-> create webpack.config.js and config
+
+# Install plugins and loaders for html
+-> npm i -D html-loader html-webpack-plugin
+-> config in webpack.config.js
+
+# Install plugins and loaders for css
+-> npm i -D mini-css-extract-plugin css-loader style-loader sass sass-loader
+-> config in webpack.config.js
+
+# Install packages for optimize
+-> npm i -D css-minimizer-webpack-plugin terser-webpack-plugin clean-webpack-plugin
+-> config in webpack.config.js
+
+# Create webpack.config.dev.js
+-> config with dev options
+
+# Create the scripts in the package.json
+-> start
+-> dev
+-> build
+
+# Install plugin to load files
+-> npm i -D copy-webpack-plugin
+
+# start coding!
+-> jump into the code

@@ -1,0 +1,25 @@
+.todo__filters {
+  width: 100%;
+  height: 4.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  margin-top: 1.6rem;
+  background-color: $dt-very-very-dark-grayish-blue;
+  border-radius: 0.5rem;
+
+  .todo__filter {
+    color: $dt-dark-grayish-blue;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-size: 1.2rem;
+
+    &--active {
+      color: $bright-blue;
+    }
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+}
