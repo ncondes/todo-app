@@ -6,13 +6,27 @@
   align-items: center;
   padding: 1.2rem 2rem;
   margin-top: 1.6rem;
-  background-color: $dt-very-very-dark-grayish-blue;
   border-radius: 0.5rem;
+
+  @include breakpoint-up(tablet) {
+    display: none;
+  }
+
+  &--dark {
+    background-color: $dt-very-very-dark-grayish-blue;
+  }
+
+  
+  &--light {
+    background-color: $lt-very-light-gray;
+  }
+
 
   .todo__filter {
     color: $dt-dark-grayish-blue;
     font-family: 'Mochiy Pop P One', sans-serif;
     font-size: 1.2rem;
+    cursor: pointer;
 
     &--active {
       color: $bright-blue;

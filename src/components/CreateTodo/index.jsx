@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from '../ThemeContext';
 
 const CreateTodo = (props) => {
+
+  const [{ isDark }] = useContext(ThemeContext)
 
   const [newTodoValue, setNewTodoValue] = React.useState('');
 
@@ -17,11 +20,11 @@ const CreateTodo = (props) => {
   }
 
   return (
-    <form className='todo__create' onSubmit={onSubmit}>
-      <div className='todo__check'></div>
+    <form className={`todo__create ${isDark? 'todo__create--dark' :'todo__create--light'}`} onSubmit={onSubmit}>
+      <div className={`todo__check ${isDark ? 'todo__check--dark' : 'todo__check--light'}`}></div>
       <div>
         <input
-          className='input__text'
+          className={`input__text ${isDark? 'input__text--dark' : 'input__text--light'}`}
           id='input__text'
           type='text'
           placeholder='Create a new todo...'

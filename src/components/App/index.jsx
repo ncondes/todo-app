@@ -1,8 +1,11 @@
 import { TodoContainer } from '../TodoContainer';
+import { ThemeProvider } from '../ThemeContext';
 
 const App = () => (
   <>
-    <TodoContainer/>
+    <ThemeProvider>
+      <TodoContainer/>
+    </ThemeProvider>
   </>
 )
 

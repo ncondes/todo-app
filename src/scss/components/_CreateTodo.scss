@@ -6,13 +6,27 @@
   align-items: center;
   padding: 1.2rem 2rem;
   margin-bottom: 1.6rem;
-  background-color: $dt-very-very-dark-grayish-blue;
   border-radius: 0.6rem 0.13rem;
 
-  > div{
+  @include breakpoint-up (tablet) {
+    margin-bottom: 2.4rem;
+    height: 6.2rem;
+    padding: 1.2rem 2.4rem;
+  }
+
+  > div {
     display: flex;
     align-items: center;
   }
+
+  &--dark {
+    background-color: $dt-very-very-dark-grayish-blue;
+  }
+
+  &--light {
+    background-color: $lt-very-light-gray;
+  }
+
 }
 
 .label{
@@ -25,14 +39,29 @@
     background-color: transparent;
     border: none;
     outline: none;
-    color: $dt-light-grayish-blue;
     font-family: 'Mochiy Pop P One', sans-serif;
     font-size: 0.9rem;
+
+    @include breakpoint-up (tablet) {
+      font-size: 1.4rem;
+    }
 
     &::placeholder{
       font-family: 'Mochiy Pop P One', sans-serif;
       font-size: 0.9rem;
       color: $dt-dark-grayish-blue;
+
+        @include breakpoint-up (tablet) {
+          font-size: 1.4rem;
+        }
+    }
+
+    &--dark {
+      color: $dt-light-grayish-blue;
+    }
+
+    &--light {
+      color: $lt-very-dark-grayish-blue;
     }
   }
 }

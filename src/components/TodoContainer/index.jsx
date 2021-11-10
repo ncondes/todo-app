@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { TodoHeader } from '../TodoHeader';
 import { CreateTodo } from '../CreateTodo';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { TodoInfo } from '../TodoInfo';
 import { TodoFilters } from '../TodoFilters';
+import { ThemeContext } from '../ThemeContext';
+import { TodoTools } from '../TodoTools';
 
 const TodoContainer = () => {
 
@@ -114,33 +116,50 @@ const TodoContainer = () => {
     setDisplayedTodos(completedTodos);
   }
 
+  // useContext for toggle the theme
+  const [{ isDark }] = useContext(ThemeContext);
+
+
   return(
-    <div className='container'>
-      <TodoHeader />
-      <CreateTodo
-        addTodo={addTodo}
-      />
-      <TodoList>
-        {displayedTodos.map(todo => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            done={todo.done}
-            onDone={() => toggleDoneTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-          />
-        ))}
-        <TodoInfo
-          todosLeft={todosLeft}
-          clearTodos={() => clearTodos(completedTodos)}
+    <div className={`background ${isDark ? 'background--dark' : 'background--light'}`}>
+      <div className={`container`}>
+        <TodoHeader />
+        <CreateTodo
+          addTodo={addTodo}
         />
-      </TodoList>
-      <TodoFilters
-        filterAllTodos={filterAllTodos}
-        filterActiveTodos={filterActiveTodos}
-        filterCompletedTodos={filterCompletedTodos}
-      />
-      <p>Drag and drop to reorder list</p>
+        <TodoList>
+          {displayedTodos.map(todo => (
+            <TodoItem
+              key={todo.text}
+              text={todo.text}
+              done={todo.done}
+              onDone={() => toggleDoneTodo(todo.text)}
+              onDelete={() => deleteTodo(todo.text)}
+            />
+          ))}
+          <TodoInfo
+            todosLeft={todosLeft}
+            clearTodos={() => clearTodos(completedTodos)}
+          />
+          <TodoTools
+            todosLeft={todosLeft}
+            clearTodos={() => clearTodos(completedTodos)}
+            filterAllTodos={filterAllTodos}
+            filterActiveTodos={filterActiveTodos}
+            filterCompletedTodos={filterCompletedTodos}
+          />
+        </TodoList>
+        <TodoFilters
+          filterAllTodos={filterAllTodos}
+          filterActiveTodos={filterActiveTodos}
+          filterCompletedTodos={filterCompletedTodos}
+        />
+        {/* <p>Drag and drop to reorder list</p> */}
+        <p>
+          Challenge by <a href="https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="#">Nicolas Conde</a>.
+        </p>
+      </div>
     </div>
   )
 }

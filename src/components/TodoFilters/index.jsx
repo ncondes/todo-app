@@ -1,6 +1,9 @@
-import React from "react"
+import React, { useContext } from "react"
+import { ThemeContext } from "../ThemeContext";
 
 const TodoFilters = (props) => {
+
+  const [{ isDark }] = useContext(ThemeContext)
 
   const [allActive, setAllActive] = React.useState(true);
   const [activeActive, setActiveActive] = React.useState(false);
@@ -23,7 +26,7 @@ const TodoFilters = (props) => {
   }
 
   return (
-  <div className='todo__filters'>
+  <div className={`todo__filters ${isDark? 'todo__filters--dark' : 'todo__filters--light'}`}>
 
     <span
       className={`todo__filter ${allActive ? 'todo__filter--active' : null}`}
